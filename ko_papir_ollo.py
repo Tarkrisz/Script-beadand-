@@ -12,7 +12,10 @@ def go():
     endGame = 0
     rounds = 0
     while endGame < 5:
-        plBe = int(input('Nyomd emg amelyiket választod: 1 - Kő | 2 - Papír | 3 - Olló'))
+        try:
+            plBe = int(input('Nyomd emg amelyiket választod: 1 - Kő | 2 - Papír | 3 - Olló'))
+        except ValueError:
+            print('Nem számot adtál meg')
         aiBe = random.randint(1,3)
         print('Ai Tipp: ' , aiBe, 'Te tipped: ', plBe)
         print(rounds , ' Forduló!')

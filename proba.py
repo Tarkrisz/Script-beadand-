@@ -9,11 +9,14 @@ def ki():
     print('Kedves',nev, 'gondoltam egy számra 1 és 100 között: ')
     igaz = True
     db = 0
-    talal = random.randint(0, 100)
+    talal = random.randint(0, 1000)
     while igaz:
         print(talal)
-        beker = input()
-        szam = int(beker)
+        try:
+            szam = int(input())
+        except ValueError:
+            print('Nem számot adtál meg')
+
         if (szam < talal):
             print('Kicsi a szám')
             db = db + 1
